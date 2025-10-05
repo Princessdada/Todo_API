@@ -26,11 +26,12 @@ app.use(passport.session());
 
 app.use(express.urlencoded({ extended: true }));
 
-// serve static files (CSS, JS, images)
+// serve static files
 app.use(express.static("."));
 
 // routes
 app.use("/", authRoutes);
+
 // ensure user is logged in before they can task route
 app.use(
   "/tasks",
